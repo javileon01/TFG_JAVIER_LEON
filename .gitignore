@@ -1,0 +1,33 @@
+# ========== LaTeX ==========
+*.aux
+*.log
+*.toc
+*.out
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.run.xml
+*.bcf
+
+# ========== Visual Studio Code ==========
+.vscode/
+
+# ========== Node.js (para futuro proyecto web) ==========
+node_modules/
+dist/
+.env
+
+# ========== Python (si usas algo en backend) ==========
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+env/
+
+# ========== Sistema ==========
+.DS_Store
+Thumbs.db
