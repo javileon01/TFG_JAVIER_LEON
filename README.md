@@ -19,8 +19,8 @@ Carpeta que contiene el documento del TFG escrito en **LaTeX**:
 
 Contendrá el desarrollo de la plataforma web asociada al TFG:
 
-- Backend (Node.js, Python, etc.)
-- Frontend (React, Vue, etc.)
+- Backend
+- Frontend 
 
 ---
 
