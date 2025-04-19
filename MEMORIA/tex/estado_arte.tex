@@ -168,30 +168,164 @@ y competencias de forma más automatizada.
     \label{fig:yobalia-portada}
 \end{figure}
 
-% Conclusiones
+% Conclusiones sobre plataformas orientadas al empleo
 \subsubsection{Conclusiones}
 
 Tras analizar las plataformas presentadas, podría cuestionarse si hubiera sido más
 eficiente utilizar directamente alguna de ellas para gestionar el emparejamiento entre
 profesionales y proyectos. Sin embargo, existen motivos claros para optar por una
-plataforma desarrollada a medida.
+\textbf{plataforma desarrollada a medida}.
 
 \textbf{LinkedIn}, aunque potente, es una red generalista donde el emparejamiento entre
-usuarios y ofertas no se basa en un sistema automático guiado por competencias, sino en
-la búsqueda activa y manual. \textbf{InfoJobs}, por su parte, se basa en filtros simples
-definidos por las ofertas, sin aplicar lógica de emparejamiento basada en competencias
-reales. Finalmente, \textbf{Yobalia} está centrada en trabajos puntuales y carece de un
-sistema de recomendación avanzado.
+usuarios y ofertas no se basa en un \textbf{sistema automático guiado por competencias},
+sino en la búsqueda activa y manual. \textbf{InfoJobs}, por su parte, se basa en filtros
+simples definidos por las ofertas, sin aplicar lógica de emparejamiento basada en
+competencias reales. Finalmente, \textbf{Yobalia} está centrada en trabajos puntuales y
+carece de un \textbf{sistema de recomendación avanzado}.
 
-Por tanto, desarrollar una solución propia permite construir un modelo centrado en
-competencias, adaptable a distintos tipos de perfiles y proyectos, y con capacidad de
-evolución. Esta decisión garantiza una mayor flexibilidad y un control total sobre la
-funcionalidad y el enfoque del sistema, ajustándose plenamente a los objetivos de este
-\gls{tfg}.
+Por tanto, desarrollar una solución propia permite construir un modelo \textbf{centrado en
+competencias}, adaptable a distintos tipos de perfiles y proyectos, y con capacidad de
+evolución. Esta decisión garantiza una mayor \textbf{flexibilidad} y un \textbf{control
+total} sobre la funcionalidad y el enfoque del sistema, ajustándose plenamente a los
+objetivos de este \gls{tfg}.
 
 % 2.1.2
 \subsection{Aplicaciones con sistemas de emparejamiento basados en coincidencias}
 
+Una vez analizadas las plataformas orientadas al empleo y la gestión del talento, es
+interesante estudiar ciertas aplicaciones que, aunque no estén diseñadas con un fin
+profesional, hacen uso de sistemas de emparejamiento o recomendación basados en la
+coincidencia entre perfiles, intereses o preferencias. Estas soluciones ofrecen ideas
+relevantes que pueden ser adaptadas a un contexto donde las competencias técnicas son el
+eje central del emparejamiento.
 
+En este apartado se analizarán tres casos representativos. En primer lugar, \textbf{Tinder} \cite{tinder},
+como referente en emparejamiento entre personas a través de la coincidencia de interés
+mutuo. A continuación, \textbf{Spotify} \cite{spotify}, cuyo sistema de recomendaciones personalizadas
+brinda conceptos aplicables (sin entrar en la complejidad de sus algoritmos internos). Por
+último, \textbf{Shapr} \cite{shapr}, que traslada la lógica de afinidad al entorno profesional,
+sugiriendo perfiles compatibles según objetivos e intereses compartidos.
+
+El objetivo es extraer elementos útiles como la personalización, la afinidad o la lógica
+de coincidencia, con el fin de incorporarlos a un sistema más estructurado y adaptado al
+emparejamiento entre profesionales y proyectos según sus competencias.
+
+% Tinder
+\subsubsection{Tinder}
+
+\textbf{Tinder} \cite{tinder} es una aplicación centrada en el emparejamiento entre
+personas mediante la coincidencia de intereses. El sistema sugiere perfiles según criterios
+como edad, género y ubicación, y cada usuario decide si le interesa o no. Cuando ambas
+personas muestran interés, se genera un \gls{match} que permite iniciar una conversación.
+
+Parte de la lógica que sigue Tinder está basada en los gustos personales, que pueden indicarse al
+crear el perfil, como se muestra en la Figura \ref{fig:tinder-intereses}. Sin embargo, esta
+información es completamente opcional y no condiciona el funcionamiento del sistema, que se
+basa principalmente en la acción voluntaria del usuario, recogiendo principalmente otros
+parámetros obligatorios como la ubicación, edad, tipo de relación, etc.
+
+La plataforma propuesta en este trabajo recoge esa idea de emparejar por afinidad, pero la
+lleva a un terreno más técnico. En lugar de basarse únicamente en preferencias generales o
+gustos personales, los profesionales deben definir competencias concretas mediante palabras
+clave, además de otros datos como la ubicación o el tipo de proyecto deseado. A diferencia
+de Tinder, donde el emparejamiento depende de la acción mutua de los usuarios, aquí se
+realiza de forma automática en función del grado de coincidencia entre los perfiles y los
+requisitos definidos, permitiendo una búsqueda más eficiente y adaptada a las necesidades de
+cada usuario.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figs/tinder-intereses.png}
+    \caption{Selección opcional de intereses en Tinder durante la creación del perfil.}
+    \label{fig:tinder-intereses}
+\end{figure}
+
+% Spotify
+\subsubsection{Spotify}
+
+\textbf{Spotify} \cite{spotify} es una plataforma de música en streaming que destaca por
+su sistema de recomendaciones personalizadas. A partir del historial de escucha, listas
+guardadas o canciones favoritas, sugiere contenido ajustado a los gustos del usuario.
+
+En la Figura \ref{fig:spotify-mixes} se muestran ejemplos de \textit{Mixes diarios},
+listas generadas automáticamente en función de preferencias individuales. De forma
+similar, la Figura \ref{fig:spotify-videos} muestra una selección de vídeos musicales
+relevantes para el perfil del usuario.
+
+Aunque Spotify no empareja personas, su modelo sirve de referencia para esta plataforma,
+especialmente en dos aspectos: mostrar resultados filtrados y relevantes en lugar de
+listados genéricos, y calcular una \textbf{afinidad cuantificada} entre usuarios y
+contenido, concepto que se traslada aquí al emparejamiento entre profesionales y proyectos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figs/spotify-mixes.png}
+    \caption{Recomendaciones musicales personalizadas mediante mezclas diarias en Spotify.}
+    \label{fig:spotify-mixes}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figs/spotify-videos.png}
+    \caption{Selección de vídeos musicales adaptados a los gustos del usuario.}
+    \label{fig:spotify-videos}
+\end{figure}
+
+% Shapr
+\subsubsection{Shapr}
+
+\textbf{Shapr} \cite{shapr} es una aplicación de networking profesional que emplea un
+sistema de emparejamiento entre usuarios a partir de información como el área profesional,
+ubicación, experiencia, año académico e intereses generales. A diario sugiere un número
+limitado de perfiles o empleos potencialmente afines, ofreciendo una experiencia sencilla
+y enfocada en generar conexiones útiles.
+
+Aunque está centrada en el ámbito profesional, Shapr no funciona como un portal de empleo
+tradicional, sino que utiliza una lógica de emparejamiento basada en sugerencias
+automatizadas y validación mutua, similar a lo que ocurre en aplicaciones como Tinder. Por
+este motivo, se ha incluido en este bloque, centrado en sistemas de coincidencia, y no en
+el anterior, dedicado a plataformas orientadas a la gestión del talento.
+
+En la Figura \ref{fig:shapr-ofertas} se muestra su sección de ofertas laborales, donde se
+presentan prácticas o puestos adaptados al perfil del usuario. Este filtrado no requiere
+una búsqueda activa ni ajustes manuales por parte del usuario, como sucede en plataformas
+como LinkedIn. En su lugar, el sistema interpreta automáticamente los datos proporcionados,
+como el grado, la ubicación o el año académico. Por ejemplo, si el usuario indica que está
+cursando el último año de carrera, es habitual que se prioricen ofertas de prácticas o
+contratos de formación.
+
+A diferencia de las plataformas anteriores, Shapr sí está enfocada al entorno profesional,
+lo que la convierte en una referencia especialmente relevante para este trabajo. La
+plataforma propuesta recoge esa misma idea de sencillez en la presentación, pero la aplica
+al sistema ya comentado, basado en competencias y coincidencias automáticas, acompañado de
+un indicador de afinidad.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figs/shapr-ofertas.png}
+    \caption{Listado de ofertas laborales en Shapr ajustadas al perfil del usuario.}
+    \label{fig:shapr-ofertas}
+\end{figure}
+
+% Conclusiones sobre aplicaciones basadas en coincidencias
+\subsubsection{Conclusiones}
+
+Las aplicaciones analizadas en este bloque comparten la idea de emparejamiento por
+coincidencia, aunque con enfoques distintos. \textbf{Tinder} introduce la lógica del
+\textit{interés mutuo} a partir de sugerencias generales, mientras que \textbf{Spotify}
+aporta el concepto de \textbf{recomendación personalizada} y afinidad basada en
+comportamientos previos.
+
+\textbf{Shapr}, a diferencia de las anteriores, está orientada al ámbito profesional y
+muestra ofertas adaptadas a la información del usuario, aunque sin usar competencias ni
+mostrar un porcentaje de coincidencia. Su modelo sirve de inspiración por su
+\textbf{presentación clara y filtrado automatizado}.
+
+Estas soluciones aportan \textbf{ideas clave}, pero ninguna cubre el emparejamiento
+profesional desde una perspectiva basada en competencias y afinidad técnica. Por ello, se
+plantea la creación de una \textbf{plataforma específica} como la propuesta en este
+\gls{tfg}.
+
+% 2.2
 \section{Evaluación de tecnologías}\label{sec:evaluacion-tecnologias}
 % Análisis crítico de las tecnologías y sistemas de despliegue posibles y por qué se han seleccionado unas concretas.
